@@ -1,5 +1,4 @@
 Flask==1.1.1
-glob
 PIL==1.1.7
 Flask-Cors==3.0.8
 Keras==2.4.2
