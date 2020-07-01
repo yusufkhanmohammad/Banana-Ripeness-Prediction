@@ -1,5 +1,4 @@
 from __future__ import division, print_function
-# coding=utf-8
 import sys
 import os
 from PIL import Image
@@ -10,10 +9,6 @@ from tensorflow.keras.models import load_model
 
 import numpy as np
 
-# Keras
-from keras.applications.imagenet_utils import preprocess_input, decode_predictions
-# from keras.models import load_model
-from keras.preprocessing import image
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
@@ -28,9 +23,6 @@ MODEL_PATH = 'banana.h5'
 # Load your trained model
 model = load_model(MODEL_PATH)
 model._make_predict_function()          # Necessary
-
-print('Model loaded. Check http://127.0.0.1:5000/')
-
 
 def model_predict(img_path, model):
     
@@ -58,7 +50,6 @@ def upload():
         basepath = os.path.dirname(__file__)
         file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
-        # file_path = "/home/mohammad/Projects/banana_classification-master/img.jpg"
 
         # Make prediction
         preds = model_predict(file_path, model)
