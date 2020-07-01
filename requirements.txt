@@ -21,3 +21,4 @@ tensorboard==2.0.2
 tensorflow==2.0.1
 Werkzeug==1.0.0
 gunicorn==19.9.0
+gevent==20.6.2
