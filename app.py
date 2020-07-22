@@ -51,6 +51,10 @@ def upload():
         file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
 
+        image = Image.open(file_path)
+        new_image = image.resize((32,32))
+        new_image.save(file_path)
+
         # Make prediction
         preds = model_predict(file_path, model)
 
@@ -80,7 +84,5 @@ def upload():
         return result
     return None
 
-
 if __name__ == '__main__':
     app.run(debug=True)
-
