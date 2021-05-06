@@ -1,6 +1,6 @@
 Flask==1.1.1
 image==1.5.32
-Flask-Cors==3.0.8
+Flask-Cors==3.0.9
 Keras==2.4.2
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
